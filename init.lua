@@ -23,4 +23,5 @@ require "user.plugin.luasnip"
 require "user.plugin.prettier"
 require "user.plugin.null-ls"
 require "user.plugin.colorscheme"
+
 -- require "user.plug.which-key"

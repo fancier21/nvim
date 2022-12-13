@@ -4,6 +4,7 @@ local servers = { 'tsserver', 'sumneko_lua' }
 -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
 -- local capabilities = vim.lsp.protocol.make_client_capabilities()
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- local on_attach = function(client, bufnr)
 --   -- Enable completion triggered by <c-x><c-o>
@@ -57,4 +58,18 @@ nvim_lsp.sumneko_lua.setup ({
       },
     },
   },
+})
+
+nvim_lsp.emmet_ls.setup({
+  -- on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
+  init_options = {
+    html = {
+      options = {
+        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+        ["bem.enabled"] = true,
+      },
+    },
+  }
 })
