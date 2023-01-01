@@ -7,9 +7,9 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
--- keymap("n", "<Space>", "", opts)
--- vim.g.mapleader = " "
--- vim.g.maplocalleader = " "
+keymap("n", "<Space>", "", opts)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Modes
 --   normal_mode = "n",
@@ -37,15 +37,9 @@ keymap("n", "<C-a>", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<C-f>", ":NvimTreeFindFile<CR>", opts)
 
 -- Telescope
-keymap("n", "<space>ff", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<space>fg", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<space>fb", "<cmd>Telescope buffers<cr>", opts)
-keymap("n", "<space>fh", "<cmd>Telescope help_tags<cr>", opts)
-
--- Lsp
--- vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
--- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
--- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
--- vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
 
 return M
