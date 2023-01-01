@@ -48,12 +48,6 @@ return packer.startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
   use {
-    "neovim/nvim-lspconfig",
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-  }
-  use "glepnir/lspsaga.nvim"
-  use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
@@ -66,15 +60,22 @@ return packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
-  -- use({
-  --   "jose-elias-alvarez/null-ls.nvim",
-  --   requires = { "nvim-lua/plenary.nvim" },
-  -- })
+  use {
+    "neovim/nvim-lspconfig",
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+  }
+  use({
+    "jose-elias-alvarez/null-ls.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+  })
+
+  use "glepnir/lspsaga.nvim"
   -- use 'MunifTanjim/prettier.nvim'
-  use 'windwp/nvim-autopairs'
-  use 'windwp/nvim-ts-autotag' -- in treesitter config 
   use 'numToStr/Comment.nvim'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use 'windwp/nvim-autopairs'
+  use 'windwp/nvim-ts-autotag' -- in treesitter config 
 
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-buffer'
