@@ -1,7 +1,7 @@
 local nvim_lsp = require('lspconfig')
 
--- local capabilities = require("cmp_nvim_lsp").default_capabilities()
--- capabilities.textDocument.completion.completionItem.snippetSupport = true
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 nvim_lsp.sumneko_lua.setup ({
   settings = {
@@ -27,12 +27,11 @@ nvim_lsp.sumneko_lua.setup ({
 })
 
 nvim_lsp.tsserver.setup({
-  -- capabilities = capabilities,
+  capabilities = capabilities,
 })
 
 nvim_lsp.emmet_ls.setup({
-  -- on_attach = on_attach,
-  -- capabilities = capabilities,
+  capabilities = capabilities,
   filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
   init_options = {
     html = {

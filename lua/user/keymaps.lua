@@ -26,6 +26,9 @@ vim.g.maplocalleader = " "
 -- keymap("n", "<C-k>", "<C-w>k", opts)
 -- keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- Formatter
+keymap("n", "<leader>f", ":lua vim.lsp.buf.format()<cr>", opts)
+
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)

@@ -69,9 +69,8 @@ return packer.startup(function(use)
     "jose-elias-alvarez/null-ls.nvim",
     requires = { "nvim-lua/plenary.nvim" },
   })
-
-  use "glepnir/lspsaga.nvim"
   -- use 'MunifTanjim/prettier.nvim'
+  use "glepnir/lspsaga.nvim"
   use 'numToStr/Comment.nvim'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'windwp/nvim-autopairs'
@@ -80,6 +79,7 @@ return packer.startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
   use 'saadparwaiz1/cmp_luasnip'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lua'
