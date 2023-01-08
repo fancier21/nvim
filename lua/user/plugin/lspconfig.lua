@@ -3,7 +3,7 @@ local nvim_lsp = require('lspconfig')
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-nvim_lsp.sumneko_lua.setup ({
+nvim_lsp.sumneko_lua.setup({
   settings = {
     Lua = {
       runtime = {
@@ -12,7 +12,7 @@ nvim_lsp.sumneko_lua.setup ({
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
+        globals = { 'vim' },
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
@@ -44,4 +44,3 @@ nvim_lsp.emmet_ls.setup({
 })
 
 nvim_lsp.sqlls.setup({})
-

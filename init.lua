@@ -1,6 +1,6 @@
 require "user.options"
 require "user.keymaps"
-require "user.plugins"
+require "user.packer"
 
 require "user.plugin.colorscheme"
 require "user.plugin.lualine"
