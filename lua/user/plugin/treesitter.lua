@@ -2,7 +2,19 @@ local treesitter = require('nvim-treesitter.configs')
 
 treesitter.setup({
   -- A list of parser names, or "all"
-  ensure_installed = { "javascript", "tsx", "json", "css", "lua", "prisma" },
+  ensure_installed = {
+    "javascript",
+    "tsx",
+    "json",
+    "css",
+    "scss",
+    "lua",
+    "sql",
+    "prisma",
+    "markdown",
+    "markdown_inline",
+    "regex"
+ },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

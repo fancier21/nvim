@@ -69,6 +69,10 @@ return packer.startup(function(use)
     end,
     requires = { { "nvim-tree/nvim-web-devicons" } }
   }
+  use {
+    'codota/tabnine-nvim',
+    run = "./dl_binaries.sh"
+  }
   use 'tpope/vim-surround'
   use 'numToStr/Comment.nvim'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
