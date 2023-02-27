@@ -19,7 +19,7 @@ return packer.startup(function(use)
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+      'kyazdani42/nvim-web-devicons',
     },
     tag = 'nightly'
   }
@@ -59,15 +59,6 @@ return packer.startup(function(use)
       require("null-ls").setup()
     end,
     requires = { "nvim-lua/plenary.nvim" },
-  }
-  use 'MunifTanjim/prettier.nvim'
-  use {
-    "glepnir/lspsaga.nvim",
-    branch = "main",
-    config = function()
-      require("lspsaga").setup({})
-    end,
-    requires = { { "nvim-tree/nvim-web-devicons" } }
   }
   use {
     'codota/tabnine-nvim',
