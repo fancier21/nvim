@@ -2,6 +2,7 @@ require "user.options"
 require "user.keymaps"
 require "user.plugins"
 
+require "user.plugin.colorscheme"
 require "user.plugin.lualine"
 require "user.plugin.tree"
 require "user.plugin.devicons"
