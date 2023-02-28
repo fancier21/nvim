@@ -6,12 +6,33 @@ end
 return packer.startup(function(use)
   use "wbthomason/packer.nvim"
   use 'kyazdani42/nvim-web-devicons'
-  use {
-    'navarasu/onedark.nvim',
+  use({
+    "rebelot/kanagawa.nvim",
+    as = 'kanagawa',
     config = function()
-      vim.cmd('colorscheme onedark')
-    end,
-  }
+      require("kanagawa").setup()
+      vim.cmd('colorscheme kanagawa')
+    end
+  })
+  -- use {
+  --   'navarasu/onedark.nvim',
+  --   config = function()
+  --     require('onedark').setup {
+  --       style = 'warmer',
+  --       transparent = true
+  --     }
+  --     require('onedark').load()
+  --     vim.cmd('colorscheme onedark')
+  --   end,
+  -- }
+  -- use({
+  --   'rose-pine/neovim',
+  --   as = 'rose-pine',
+  --   config = function()
+  --     require("rose-pine").setup()
+  --     vim.cmd('colorscheme rose-pine')
+  --   end
+  -- })
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
