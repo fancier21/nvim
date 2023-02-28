@@ -1,7 +1,7 @@
 local colorsheme = require("onedark")
 
 colorsheme.setup({
-  style = 'warmer',
+  style = 'darker',
   transparent = true
 })
 colorsheme.load()

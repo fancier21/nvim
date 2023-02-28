@@ -1,6 +1,16 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "tsserver", "eslint", "emmet_ls", "sqlls", "tailwindcss" },
+  ensure_installed = {
+    "lua_ls",
+    "tsserver",
+    "eslint",
+    "html",
+    "cssls",
+    "emmet_ls",
+    "tailwindcss",
+    "sqlls",
+    "jsonls"
+  },
 })
 local nvim_lsp = require('lspconfig')
 
@@ -62,13 +72,13 @@ nvim_lsp.tsserver.setup {
   capabilities = capabilities,
 }
 nvim_lsp.eslint.setup {
-  -- on_attach = function(client, bufnr)
-  --   vim.api.nvim_create_autocmd("BufWritePre", {
-  --     buffer = bufnr,
-  --     command = "EslintFixAll",
-  --   })
-  -- end,
-  on_attach = on_attach,
+  on_attach = function(_, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end,
+  -- on_attach = on_attach,
   capabilities = capabilities,
 }
 nvim_lsp.sqlls.setup {
@@ -89,6 +99,18 @@ nvim_lsp.emmet_ls.setup {
   }
 }
 nvim_lsp.tailwindcss.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+nvim_lsp.jsonls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+nvim_lsp.cssls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+nvim_lsp.html.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
