@@ -35,11 +35,11 @@ return packer.startup(function(use)
     "akinsho/toggleterm.nvim",
     tag = 'v2.*'
   }
-  -- use {
-  --   'akinsho/bufferline.nvim',
-  --   tag = "v2.*",
-  --   requires = 'kyazdani42/nvim-web-devicons'
-  -- }
+  use {
+    'akinsho/bufferline.nvim',
+    tag = "v2.*",
+    requires = 'kyazdani42/nvim-web-devicons'
+  }
   use 'lukas-reineke/indent-blankline.nvim'
   use 'lewis6991/gitsigns.nvim'
   use 'mbbill/undotree'
