@@ -7,9 +7,9 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim"
   use 'kyazdani42/nvim-web-devicons'
   use {
-    'navarasu/onedark.nvim',
+    'nyoom-engineering/oxocarbon.nvim',
     config = function()
-      vim.cmd('colorscheme onedark')
+      vim.cmd('colorscheme oxocarbon')
     end,
   }
   use {
@@ -32,13 +32,10 @@ return packer.startup(function(use)
     run = 'make',
   }
   use {
-    "akinsho/toggleterm.nvim",
-    tag = 'v2.*'
-  }
-  use {
-    'akinsho/bufferline.nvim',
-    tag = "v2.*",
-    requires = 'kyazdani42/nvim-web-devicons'
+    "akinsho/toggleterm.nvim", tag = '*',
+    config = function()
+      require("toggleterm").setup()
+    end
   }
   use 'lukas-reineke/indent-blankline.nvim'
   use 'lewis6991/gitsigns.nvim'
@@ -64,6 +61,36 @@ return packer.startup(function(use)
     'codota/tabnine-nvim',
     run = "./dl_binaries.sh"
   }
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    config = function()
+      require("lspsaga").setup({})
+    end,
+    requires = {
+      { "nvim-tree/nvim-web-devicons" },
+      --Please make sure you install markdown and markdown_inline parser
+      { "nvim-treesitter/nvim-treesitter" }
+    }
+  })
+  use 'MunifTanjim/nui.nvim'
+  -- Packer
+  use({
+    "jackMort/ChatGPT.nvim",
+    config = function()
+      require("chatgpt").setup({
+        -- optional configuration
+        keymaps = {
+          submit = "<C-s>",
+        },
+      })
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  })
   use 'tpope/vim-surround'
   use 'numToStr/Comment.nvim'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
@@ -77,8 +104,18 @@ return packer.startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lua'
-
-  use 'L3MON4D3/LuaSnip'
+  use({
+    "L3MON4D3/LuaSnip", -- in cmp config
+    -- follow latest release.
+    -- tag = "v<CurrentMajor>.*",
+    -- install jsregexp (optional!:).
+    run = "make install_jsregexp"
+  })
   use 'rafamadriz/friendly-snippets'
-  use 'onsails/lspkind-nvim'
+  -- use 'onsails/lspkind-nvim'
+  -- use {
+  --   'akinsho/bufferline.nvim',
+  --   tag = "v2.*",
+  --   requires = 'kyazdani42/nvim-web-devicons'
+  -- }
 end)
