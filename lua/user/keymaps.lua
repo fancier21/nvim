@@ -45,6 +45,11 @@ keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
 -- UndoTree
 keymap("n", "<leader>u", ":UndotreeToggle<CR>", opts)
 
+-- ChatGPT
+vim.keymap.set('n', '<Leader>tk', '<cmd>:ChatGPT<cr>', opts)
+vim.keymap.set('n', '<Leader>tj', '<cmd>:ChatGPTActAs<cr>', opts)
+vim.keymap.set('n', '<Leader>tt', '<cmd>:ChatGPTEditWithInstructions<cr>', opts)
+
 -- LSP
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
