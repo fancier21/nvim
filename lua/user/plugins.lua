@@ -80,9 +80,13 @@ return packer.startup(function(use)
     config = function()
       require("chatgpt").setup({
         -- optional configuration
-        keymaps = {
-          submit = "<C-s>",
-        },
+        chat = {
+          keymaps = {
+            popup_input = {
+              submit = "<C-s>",
+            }
+          },
+        }
       })
     end,
     requires = {
