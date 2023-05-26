@@ -42,8 +42,11 @@ return packer.startup(function(use)
   use 'mbbill/undotree'
   use {
     "neovim/nvim-lspconfig",
-    "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
+  }
+  use {
+    "williamboman/mason.nvim",
+    run = ":MasonUpdate" -- :MasonUpdate updates registry contents
   }
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -79,14 +82,20 @@ return packer.startup(function(use)
     "jackMort/ChatGPT.nvim",
     config = function()
       require("chatgpt").setup({
-        -- optional configuration
         chat = {
           keymaps = {
-            popup_input = {
-              submit = "<C-s>",
-            }
+            close = { "jk", "kj", "<Esc>" },
+            yank_last = "<C-y>",
+            scroll_up = "<C-u>",
+            scroll_down = "<C-d>",
+            toggle_settings = "<C-o>",
+            new_session = "<C-n>",
+            cycle_windows = "<Tab>",
           },
-        }
+        },
+        popup_input = {
+          submit = "<C-t>",
+        },
       })
     end,
     requires = {
