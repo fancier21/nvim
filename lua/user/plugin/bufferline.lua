@@ -64,7 +64,7 @@ bufferline.setup({
         filetype = "NvimTree",
         text = "File Explorer",
         separator = true,
-        padding = 1,
+        -- padding = 1,
       }
     },
     -- color_icons = true | false, -- whether or not to add the filetype icon highlights

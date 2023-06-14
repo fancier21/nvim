@@ -7,9 +7,9 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim"
   use 'kyazdani42/nvim-web-devicons'
   use {
-    'nyoom-engineering/oxocarbon.nvim',
+    "RRethy/nvim-base16",
     config = function()
-      vim.cmd('colorscheme oxocarbon')
+      vim.cmd('colorscheme base16-tomorrow-night')
     end,
   }
   use {
@@ -24,7 +24,7 @@ return packer.startup(function(use)
     tag = 'nightly'
   }
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    'nvim-telescope/telescope.nvim', tag = '0.1.1',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use {
@@ -41,12 +41,9 @@ return packer.startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'mbbill/undotree'
   use {
-    "neovim/nvim-lspconfig",
-    "williamboman/mason-lspconfig.nvim",
-  }
-  use {
     "williamboman/mason.nvim",
-    run = ":MasonUpdate" -- :MasonUpdate updates registry contents
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
   }
   use {
     'nvim-treesitter/nvim-treesitter',
