@@ -128,4 +128,8 @@ return packer.startup(function(use)
     tag = "v2.*",
     requires = 'kyazdani42/nvim-web-devicons'
   }
+  use {
+    "rest-nvim/rest.nvim",
+    requires = { "nvim-lua/plenary.nvim" }
+  }
 end)

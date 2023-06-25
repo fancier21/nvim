@@ -56,4 +56,13 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
+-- Map <leader>r to run the request under the cursor
+vim.api.nvim_set_keymap('n', '<leader>r', '<Plug>RestNvim', {})
+
+-- Map <leader>p to preview the request cURL command
+vim.api.nvim_set_keymap('n', '<leader>p', '<Plug>RestNvimPreview', {})
+
+-- Map <leader>l to re-run the last request
+vim.api.nvim_set_keymap('n', '<leader>l', '<Plug>RestNvimLast', {})
+
 return M

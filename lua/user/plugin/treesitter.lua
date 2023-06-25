@@ -6,6 +6,7 @@ treesitter.setup({
     "javascript",
     "tsx",
     "json",
+    "http",
     "css",
     "scss",
     "lua",
