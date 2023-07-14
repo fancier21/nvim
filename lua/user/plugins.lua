@@ -6,10 +6,11 @@ end
 return packer.startup(function(use)
   use "wbthomason/packer.nvim"
   use 'kyazdani42/nvim-web-devicons'
+  use "norcalli/nvim.lua"
   use {
     "RRethy/nvim-base16",
     config = function()
-      vim.cmd('colorscheme base16-tomorrow-night')
+      vim.cmd([[colorscheme base16-tomorrow-night]])
     end,
   }
   use {
@@ -51,30 +52,10 @@ return packer.startup(function(use)
   }
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use {
-    "jose-elias-alvarez/null-ls.nvim",
-    config = function()
-      require("null-ls").setup()
-    end,
-    requires = { "nvim-lua/plenary.nvim" },
-  }
-  use {
     'codota/tabnine-nvim',
     run = "./dl_binaries.sh"
   }
-  use({
-    "glepnir/lspsaga.nvim",
-    branch = "main",
-    config = function()
-      require("lspsaga").setup({})
-    end,
-    requires = {
-      { "nvim-tree/nvim-web-devicons" },
-      --Please make sure you install markdown and markdown_inline parser
-      { "nvim-treesitter/nvim-treesitter" }
-    }
-  })
   use 'MunifTanjim/nui.nvim'
-  -- Packer
   use({
     "jackMort/ChatGPT.nvim",
     config = function()
@@ -115,9 +96,8 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lua'
   use({
-    "L3MON4D3/LuaSnip", -- in cmp config
-    -- follow latest release.
-    -- tag = "v<CurrentMajor>.*",
+    "L3MON4D3/LuaSnip",
+    tag = "v1.*",
     -- install jsregexp (optional!:).
     run = "make install_jsregexp"
   })
