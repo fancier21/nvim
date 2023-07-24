@@ -63,6 +63,7 @@ vim.api.nvim_set_keymap('n', '<leader>p', '<Plug>RestNvimPreview', opts)
 -- Map <leader>l to re-run the last request
 vim.api.nvim_set_keymap('n', '<leader>l', '<Plug>RestNvimLast', opts)
 
+-- Linter
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   callback = function()
     require("lint").try_lint()

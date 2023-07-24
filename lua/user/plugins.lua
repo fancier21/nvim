@@ -72,7 +72,7 @@ return packer.startup(function(use)
           },
         },
         popup_input = {
-          submit = "<C-t>",
+          submit = "<C-s>",
         },
       })
     end,
@@ -102,11 +102,19 @@ return packer.startup(function(use)
     run = "make install_jsregexp"
   })
   use 'rafamadriz/friendly-snippets'
-  -- use 'onsails/lspkind-nvim'
+  use 'onsails/lspkind-nvim'
   use {
     'akinsho/bufferline.nvim',
     tag = "v2.*",
     requires = 'kyazdani42/nvim-web-devicons'
+  }
+  use {
+    'mfussenegger/nvim-lint',
+    config = function()
+      require('lint').linters_bvaley_ft = {
+        markdown = { 'eslint' }
+      }
+    end
   }
   use {
     "rest-nvim/rest.nvim",
