@@ -112,7 +112,7 @@ return packer.startup(function(use)
     'mfussenegger/nvim-lint',
     config = function()
       require('lint').linters_bvaley_ft = {
-        markdown = { 'eslint' }
+        markdown = { 'eslint', 'jsonlint'  }
       }
     end
   }
